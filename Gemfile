@@ -32,6 +32,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'angularjs-rails'
+gem 'ng-rails-csrf', :git => 'git://github.com/xrd/ng-rails-csrf.git'
+
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

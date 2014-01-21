@@ -18,5 +18,27 @@ rails g controller Classifieds index update create destroy
 
 all tests pass on each action
 
+# add to gemfile
+gem 'angularjs-rails'
+gem 'ng-rails-csrf', :git => 'git://github.com/xrd/ng-rails-csrf.git'
+
+add to application.js file:
+//= require angular
+
+//= require ng-rails-csrf
+//= require angular-resource
+
+//= require_tree ./angular/services/.
+//= require_tree ./angular/directives/.
+//= require_tree ./angular/controllers/.
+//= require_tree ./angular/.
+
+
+create directories in asset pipeline to handle angular code
+angular/services
+angular/directives
+angular/controllers
+
+bundle install
 
 
