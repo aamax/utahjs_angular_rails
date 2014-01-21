@@ -1,0 +1,22 @@
+basic overview of using angular with a rails app
+
+using rvm, set up basic ruby and gem config for ruby 2.0.0p247 and rails 4.0.2
+
+create app with rails new myAppName
+copy .ruby-* files into myAppName directory
+bundle install
+
+create model
+rails g model Classified name:string description:string phone:string seller:string price:float image:string
+rake db:migrate
+--- just using sqllite and ActiveRecord 
+
+modify test on model... 
+test passes
+
+rails g controller Classifieds index update create destroy
+
+all tests pass on each action
+
+
+
