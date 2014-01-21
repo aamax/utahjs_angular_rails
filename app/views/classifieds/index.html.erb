@@ -1,5 +1,37 @@
-<div ng-controller='classifiedsCtrl'>
-	
-	hello {{hello}}
-</div>
-	
+	<!-- views/classifieds/index.html.erb -->
+
+	<div ng-controller='classifiedsCtrl'>
+
+      <h1>Classifieds Listings</h1>
+      &nbsp;&nbsp;
+      <a class='btn btn-large btn-success' ng-click="addAd()">New Classified Ad</a>
+      <hr/>
+
+      <div ng-repeat="ad in classifieds">
+
+        <div class="adPanel">
+
+            <div class="row">
+              <div class="span2">
+                <a class='btn btn-large btn-danger' ng-click="deleteAd(ad)">Delete</a>
+                <a class='btn btn-large btn-warning' ng-click="editAd(ad)">Edit</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="span1">
+                <span class="adName span1">{{ad.name}}</span><br/>
+                <img src='assets/{{ad.image}}' class="adImage"/>
+              </div>
+              <div class="span2">
+                Description: {{ad.description}}  <br/>
+                Price: ${{ad.price}}             <br/>
+                Phone: {{ad.phone}}              <br/>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+

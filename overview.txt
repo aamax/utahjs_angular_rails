@@ -2,7 +2,8 @@ basic overview of using angular with a rails app
 
 using rvm, set up basic ruby and gem config for ruby 2.0.0p247 and rails 4.0.2
 
-create app with rails new myAppName
+create app with 
+rails new myAppName
 copy .ruby-* files into myAppName directory
 bundle install
 
@@ -17,6 +18,9 @@ test passes
 rails g controller Classifieds index update create destroy
 
 all tests pass on each action
+
+add bootstrap cdn version for some styling
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.03/css/bootstrap.min.css" rel="stylesheet">
 
 # add to gemfile
 gem 'angularjs-rails'
@@ -53,6 +57,29 @@ added ng-controller='classifiedsCtrl' to div in classifieds index file
 created myApp.js.coffee file and put in services dir
 
 created classifiedsCtrl.js.coffee file and put in controllers dir
+
+----- angular is in and working!
+
+update index to use ng-repeat to show db objects crudely.  some angular click events and buttons for CRUD
+
+add rake task to populate classifieds
+add images for classified data to asset pipeline
+rake db_util:load_data
+
+create service to access data 
+discuss resource format
+add service to myApp declaration (injection)
+inject service into controller
+
+create broadcast call and handler
+
+update rails controller to return records and build jbuilder file to handle return values
+
+add code for CRUD operations:
+
+
+
+
 
 
 
