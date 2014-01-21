@@ -1,8 +1,8 @@
 AngRails::Application.routes.draw do
-  get "classifieds/index"
-  get "classifieds/update"
-  get "classifieds/create"
-  get "classifieds/destroy"
+  resources :classifieds
+  
+  
+  root :to => "classifieds#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

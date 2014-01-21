@@ -41,4 +41,22 @@ angular/controllers
 
 bundle install
 
+add route to routes for root path
+root :to => "classifieds#index"
+
+removed gets and add resources in routes file
+
+added ng-app='myApp' to html tag in layouts file
+
+added ng-controller='classifiedsCtrl' to div in classifieds index file
+
+created myApp.js.coffee file and put in services dir
+
+created classifiedsCtrl.js.coffee file and put in controllers dir
+
+
+
+
+
+
 
