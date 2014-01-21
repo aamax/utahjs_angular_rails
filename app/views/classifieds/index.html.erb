@@ -4,7 +4,40 @@
 
       <h1>Classifieds Listings</h1>
       &nbsp;&nbsp;
-      <a class='btn btn-large btn-success' ng-click="addAd()">New Classified Ad</a>
+      <button class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#newAd" ng-click="addNew()">New Classified Ad</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="newAd" tabindex="-1" role="dialog" aria-labelledby="newAdLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Edit/Add Classified</h4>
+            </div>
+            <div class="modal-body">
+              <b>Name: </b><input type="text" ng-model="currentAd.name" placeholder="Name"/>
+              <br/>  <br/>
+
+              <b>Description: </b><input  type="text" ng-model="currentAd.description" placeholder="Description"/>
+              <br/> <br/>
+
+              <b>Price: </b><input type="text" ng-model="currentAd.price" placeholder="Price"/>
+              <br/>  <br/>
+
+              <b>Phone: </b><input  type="text" ng-model="currentAd.phone" placeholder="Phone"/>
+              <br/>  <br/>
+
+              <b>Image: </b><input  type="text" ng-model="currentAd.image" placeholder="Image"/>
+              <br/>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" ng-click="saveAd()">Save changes</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
       <hr/>
 
       <div ng-repeat="ad in classifieds">
@@ -14,19 +47,19 @@
             <div class="row">
               <div class="span2">
                 <a class='btn btn-large btn-danger' ng-click="deleteAd(ad)">Delete</a>
-                <a class='btn btn-large btn-warning' ng-click="editAd(ad)">Edit</a>
+                <a class='btn btn-large btn-warning' ng-click="editAd(ad)" data-toggle="modal" data-target="#newAd" >Edit</a>
               </div>
             </div>
 
             <div class="row">
               <div class="span1">
                 <span class="adName span1">{{ad.name}}</span><br/>
-                <img src='assets/{{ad.image}}' class="adImage"/>
+                <img src="/assets/{{ad.image}}" class="adImage">
               </div>
               <div class="span2">
-                Description: {{ad.description}}  <br/>
-                Price: ${{ad.price}}             <br/>
-                Phone: {{ad.phone}}              <br/>
+                <b>Description</b>: {{ad.description}}  <br/>
+                <b>Price</b>: ${{ad.price}}             <br/>
+                <b>Phone</b>: {{ad.phone}}              <br/>
               </div>
             </div>
         </div>

@@ -23,6 +23,7 @@
 //= require_tree ./angular/controllers/.
 //= require_tree ./angular/.
 
+//= require bootstrap
 
 //= require turbolinks
 //= require_tree .

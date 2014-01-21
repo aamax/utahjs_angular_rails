@@ -5,13 +5,17 @@ classifiedCtrl = angular.module('myApp').controller('classifiedsCtrl', ($scope, 
     $scope.classifieds = classifiedSvc.getClassifieds()
 
   $scope.deleteAd = (ad) ->
-    alert('deleting')
+    # confirm: are you sure?
+    classifiedsSvc.deleteAd(ad)
 
   $scope.editAd = (ad) ->
-    alert('editing')
+    $scope.currentAd = ad
 
-  $scope.addAd = () ->
-    alert('adding')
+  $scope.addNew = () ->
+    $scope.currentAd = {name: 'unset', description: 'unset', phone: 'unset', image: 'unset', price: 0}
+
+  $scope.saveAd = () ->
+    classifiedsSvc.savAd($scope.currentAd)
 )
 
 classifiedCtrl.$inject = ["$scope", "classifiedSvc"]
