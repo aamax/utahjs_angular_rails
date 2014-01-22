@@ -19,7 +19,10 @@ angular.module('myApp').factory "classifiedSvc", ($rootScope, $resource, $http) 
       _classifiedList = []
 
   saveAd: (ad) ->
-    _classifieds.save(ad)
+    if ad.id
+      _classifieds.update(ad)
+    else
+      _classifieds.save(ad)
 
   deleteAd: (ad) ->
     _classifieds.delete(ad)
