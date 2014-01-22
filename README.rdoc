@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The code in this repository is the code developed for a presentation I did on 1/22/2014 for the Utah JS users group.  It is a basic ruby on rails application with angularjs plugged in to show how to use angular in a rails app to build a simple CRUD around an ActiveRecord model.
 
-Things you may want to cover:
+I used bootstrap 3 because I like the modal windows and it was very simple to create the basic functionality around what i wanted and avoid worrying about any angular routing at all.  The only rails routing was to the index action of the single rails controller.  the rest is all handled on the client side using the angular controller and a service to manage any data operations which are routed to the rails controller and handled server side in the ruby code.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to set up the application:
+* clone the git repository and cd into it
+* bundle install # installs all gems into the app
+* rake db_util:load_data  # initializes the database with entries
+* rails s # start the rails server 
+* navigate to webpage:     localhost:3000
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+this is not a best practices example but it is functional.  I hope it's helpful.
+
+Max
