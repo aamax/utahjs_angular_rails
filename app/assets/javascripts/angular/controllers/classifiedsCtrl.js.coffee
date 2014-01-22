@@ -7,7 +7,7 @@ classifiedCtrl = angular.module('myApp').controller('classifiedsCtrl', ($scope, 
   $scope.deleteAd = (ad) ->
     # confirm: are you sure?
     classifiedSvc.deleteAd(ad)
-    $scope.classifieds.splice(ad, 1)
+    classifiedSvc.populateClassifieds()
 
   $scope.editAd = (ad) ->
     $scope.currentAd = ad
@@ -22,7 +22,7 @@ classifiedCtrl = angular.module('myApp').controller('classifiedsCtrl', ($scope, 
 
     classifiedSvc.saveAd($scope.currentAd)
     if bIsNew
-      $scope.classifieds.push $scope.currentAdd
+      classifiedSvc.populateClassifieds()
     $('#newAd').modal('hide')
 
 )
